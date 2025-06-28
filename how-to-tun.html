@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Run Your Portfolio</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 10px;
+            color: #1f2937;
+        }
+        h2 {
+            margin-top: 30px;
+            color: #3b82f6;
+        }
+        code {
+            background: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        pre {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        .step {
+            background: #f8fafc;
+            border-left: 4px solid #3b82f6;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .note {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>How to Run Your Portfolio Website</h1>
+    
+    <p>This guide will help you set up and run your portfolio website, including how to use the script files.</p>
+    
+    <h2>Project Structure</h2>
+    <pre>
+portfolio/
+├── index.html          # Main HTML file
+├── styles.css          # CSS styles
+├── script.js           # Main JavaScript functionality
+└── scripts/
+    ├── email-service.js    # Email configuration helper
+    └── animations.js       # Animation configuration helper
+    </pre>
+    
+    <h2>Step 1: Basic Setup</h2>
+    <div class="step">
+        <p>First, make sure all files are in the correct folder structure as shown above.</p>
+    </div>
+    
+    <h2>Step 2: Running the Website</h2>
+    <div class="step">
+        <p>You have several options to run the website:</p>
+        
+        <h3>Option 1: Open directly in browser</h3>
+        <p>Simply double-click the <code>index.html</code> file to open it in your default web browser.</p>
+        
+        <h3>Option 2: Use a local server (recommended)</h3>
+        <p>For the best experience, use a local development server:</p>
+        
+        <p>If you have Node.js installed:</p>
+        <pre>
+# Install a simple HTTP server
+npm install -g http-server
+
+# Navigate to your project folder
+cd path/to/portfolio
+
+# Start the server
+http-server
+        </pre>
+        
+        <p>If you have Python installed:</p>
+        <pre>
+# Navigate to your project folder
+cd path/to/portfolio
+
+# Python 3
+python -m http.server
+
+# Python 2
+python -m SimpleHTTPServer
+        </pre>
+        
+        <p>Then open your browser and go to <code>http://localhost:8080</code> or the URL shown in your terminal.</p>
+    </div>
+    
+    <h2>Step 3: Running the Helper Scripts</h2>
+    <div class="step">
+        <p>The helper scripts (<code>email-service.js</code> and <code>animations.js</code>) are meant to provide guidance for configuring your portfolio. You can run them in several ways:</p>
+        
+        <h3>Option 1: Using the browser console</h3>
+        <p>1. Open your portfolio website in the browser</p>
+        <p>2. Open the browser's developer tools (F12 or right-click > Inspect)</p>
+        <p>3. Go to the Console tab</p>
+        <p>4. Copy and paste the content of the script you want to run</p>
+        <p>5. Press Enter to execute</p>
+        
+        <h3>Option 2: Using Node.js</h3>
+        <pre>
+# Navigate to your scripts folder
+cd path/to/portfolio/scripts
+
+# Run the email service script
+node email-service.js
+
+# Run the animations script
+node animations.js
+        </pre>
+    </div>
+    
+    <h2>Step 4: Configuring Email Service</h2>
+    <div class="step">
+        <p>After running the <code>email-service.js</code> script, follow the instructions to set up EmailJS:</p>
+        <ol>
+            <li>Sign up for EmailJS at <a href="https://www.emailjs.com/" target="_blank">https://www.emailjs.com/</a></li>
+            <li>Create a service connecting to your email provider</li>
+            <li>Create an email template with the variables mentioned</li>
+            <li>Get your User ID, Service ID, and Template ID</li>
+            <li>Update the <code>script.js</code> file with your credentials</li>
+        </ol>
+    </div>
+    
+    <h2>Step 5: Customizing Animations</h2>
+    <div class="step">
+        <p>After running the <code>animations.js</code> script, you'll get instructions on how to customize the animations in your portfolio:</p>
+        <ol>
+            <li>Modify particle animations in the <code>ParticleAnimation</code> class in <code>script.js</code></li>
+            <li>Adjust scroll animations in the <code>ScrollAnimations</code> class</li>
+            <li>Add additional animation classes to your CSS</li>
+            <li>Apply these animation classes to elements in your HTML</li>
+        </ol>
+    </div>
+    
+    <div class="note">
+        <p><strong>Note:</strong> The helper scripts are primarily educational and provide guidance on how to configure your portfolio. They don't make actual changes to your files - you'll need to implement their suggestions manually.</p>
+    </div>
+    
+    <h2>Customizing Your Portfolio</h2>
+    <p>To personalize your portfolio:</p>
+    <ul>
+        <li>Replace "Your Name" with your actual name throughout the HTML</li>
+        <li>Update the profile picture and project images</li>
+        <li>Modify the skills and their percentages</li>
+        <li>Add your own projects with descriptions and links</li>
+        <li>Update contact information with your actual details</li>
+        <li>Customize colors and styles in the CSS file</li>
+    </ul>
+</body>
+</html>
